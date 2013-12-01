@@ -21,7 +21,7 @@
 		0FDE59561844B11E0036376D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDE59351844B11E0036376D /* UIKit.framework */; };
 		0FDE595E1844B11E0036376D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FDE595C1844B11E0036376D /* InfoPlist.strings */; };
 		0FDE59601844B11E0036376D /* shudaiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDE595F1844B11E0036376D /* shudaiTests.m */; };
-		BC40CC77184A677A0072EB91 /* SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40CC76184A677A0072EB91 /* SViewController.m */; };
+		BC1EDA8C184B7BBE004F5978 /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1EDA8B184B7BBE004F5978 /* SHViewController.m */; };
 		BC40CC7E184A68B60072EB91 /* Sugerencia.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40CC7D184A68B60072EB91 /* Sugerencia.m */; };
 		BC7272261845334500BF08DC /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7272181845334500BF08DC /* NSObject+SBJSON.m */; };
 		BC7272271845334500BF08DC /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72721A1845334500BF08DC /* NSString+SBJSON.m */; };
@@ -61,8 +61,8 @@
 		0FDE595B1844B11E0036376D /* shudaiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "shudaiTests-Info.plist"; sourceTree = "<group>"; };
 		0FDE595D1844B11E0036376D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0FDE595F1844B11E0036376D /* shudaiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shudaiTests.m; sourceTree = "<group>"; };
-		BC40CC75184A677A0072EB91 /* SViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SViewController.h; sourceTree = "<group>"; };
-		BC40CC76184A677A0072EB91 /* SViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SViewController.m; sourceTree = "<group>"; };
+		BC1EDA8A184B7BBE004F5978 /* SHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHViewController.h; sourceTree = "<group>"; };
+		BC1EDA8B184B7BBE004F5978 /* SHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
 		BC40CC7C184A68B60072EB91 /* Sugerencia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sugerencia.h; path = shudai/Sugerencia.h; sourceTree = "<group>"; };
 		BC40CC7D184A68B60072EB91 /* Sugerencia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sugerencia.m; path = shudai/Sugerencia.m; sourceTree = "<group>"; };
 		BC7272161845334500BF08DC /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -141,14 +141,14 @@
 		0FDE59371844B11E0036376D /* shudai */ = {
 			isa = PBXGroup;
 			children = (
+				BC1EDA8A184B7BBE004F5978 /* SHViewController.h */,
+				BC1EDA8B184B7BBE004F5978 /* SHViewController.m */,
 				0FDE59401844B11E0036376D /* SHAppDelegate.h */,
 				0FDE59411844B11E0036376D /* SHAppDelegate.m */,
 				0FDE59431844B11E0036376D /* Main_iPhone.storyboard */,
 				0FDE59461844B11E0036376D /* Main_iPad.storyboard */,
 				0FDE594C1844B11E0036376D /* Images.xcassets */,
 				0FDE59381844B11E0036376D /* Supporting Files */,
-				BC40CC75184A677A0072EB91 /* SViewController.h */,
-				BC40CC76184A677A0072EB91 /* SViewController.m */,
 			);
 			path = shudai;
 			sourceTree = "<group>";
@@ -330,11 +330,11 @@
 			files = (
 				BC7272281845334500BF08DC /* SBJSON.m in Sources */,
 				BC72722C1845334500BF08DC /* myJson.m in Sources */,
-				BC40CC77184A677A0072EB91 /* SViewController.m in Sources */,
 				BC7272271845334500BF08DC /* NSString+SBJSON.m in Sources */,
 				BC40CC7E184A68B60072EB91 /* Sugerencia.m in Sources */,
 				0FDE593E1844B11E0036376D /* main.m in Sources */,
 				BC7272291845334500BF08DC /* SBJsonBase.m in Sources */,
+				BC1EDA8C184B7BBE004F5978 /* SHViewController.m in Sources */,
 				BC72722B1845334500BF08DC /* SBJsonWriter.m in Sources */,
 				BC72722A1845334500BF08DC /* SBJsonParser.m in Sources */,
 				BC7272261845334500BF08DC /* NSObject+SBJSON.m in Sources */,
