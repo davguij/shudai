@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Qué opinan sobre..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17q-zu-Utg">
-                                <rect key="frame" x="20" y="95" width="280" height="30"/>
+                                <rect key="frame" x="20" y="98" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -64,6 +64,7 @@
                     <navigationItem key="navigationItem" title="Shudai" id="gBG-ke-299"/>
                     <connections>
                         <outlet property="tablaSugerencias" destination="Tjn-o8-uXo" id="90w-4C-1zx"/>
+                        <outlet property="txtBuscar" destination="17q-zu-Utg" id="8RB-SR-NMi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXH-vb-juR" userLabel="First Responder" sceneMemberID="firstResponder"/>

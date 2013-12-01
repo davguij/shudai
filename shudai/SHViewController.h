@@ -16,6 +16,7 @@
 
 @property (readonly,nonatomic) NSMutableArray *listaSugerencias;
 @property (nonatomic, retain) UITableView *tablaSugerencias;
+@property (strong, nonatomic) IBOutlet UITextField *txtBuscar;
 
 
 

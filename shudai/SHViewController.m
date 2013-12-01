@@ -15,7 +15,7 @@
 
 @implementation SHViewController
 
-@synthesize listaSugerencias, tablaSugerencias;
+@synthesize listaSugerencias, tablaSugerencias, txtBuscar;
 
 
 - (void)viewDidLoad
@@ -64,6 +64,14 @@
     cell.textLabel.text = [sugerenciaActual nombreSugerencia];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    Sugerencia *sugerenciaClicada = [listaSugerencias objectAtIndex:indexPath.row];
+    
+    txtBuscar.text = [sugerenciaClicada nombreSugerencia];
 }
 
 /*
