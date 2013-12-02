@@ -17,6 +17,8 @@
 @property (readonly,nonatomic) NSMutableArray *listaSugerencias;
 @property (nonatomic, retain) UITableView *tablaSugerencias;
 @property (strong, nonatomic) IBOutlet UITextField *txtBuscar;
+- (IBAction)btnBuscar:(id)sender;
+- (IBAction)cerrarTeclado:(id)sender;
 
 
 

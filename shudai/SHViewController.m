@@ -38,6 +38,26 @@
     }
 }
 
+
+- (IBAction)btnBuscar:(id)sender {
+    
+    NSString *campoTexto = [txtBuscar text];
+    
+    NSLog(@"%@", campoTexto);
+    
+    
+}
+
+- (IBAction)cerrarTeclado:(id)sender {
+    
+    [sender resignFirstResponder]; //cerrar teclado
+}
+
+
+
+
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -71,7 +91,9 @@
     
     Sugerencia *sugerenciaClicada = [listaSugerencias objectAtIndex:indexPath.row];
     
-    txtBuscar.text = [sugerenciaClicada nombreSugerencia];
+    //txtBuscar.text = [sugerenciaClicada nombreSugerencia];
+    
+    NSLog(@"%@", [sugerenciaClicada nombreSugerencia]);
 }
 
 /*
@@ -124,5 +146,6 @@
  }
  
  */
+
 
 @end
