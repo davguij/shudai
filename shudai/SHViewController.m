@@ -43,8 +43,9 @@
     
     NSString *campoTexto = [txtBuscar text];
     
-    NSLog(@"%@", campoTexto);
+    //NSLog(@"%@", campoTexto);
     
+    [self llamadaTwitter:campoTexto];
     
 }
 
@@ -86,15 +87,23 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     Sugerencia *sugerenciaClicada = [listaSugerencias objectAtIndex:indexPath.row];
     
     //txtBuscar.text = [sugerenciaClicada nombreSugerencia];
+    //NSLog(@"%@", [sugerenciaClicada nombreSugerencia]);
     
-    NSLog(@"%@", [sugerenciaClicada nombreSugerencia]);
+    [self llamadaTwitter:[sugerenciaClicada nombreSugerencia]];
 }
+
+// DAVID: Metodo para llamar a la API de Twitter
+- (void)llamadaTwitter:(NSString *)busqueda {
+    // Añadir la llamada a la API de Twitter
+    NSLog(@"%@", busqueda);
+}
+// DAVID: Fin del metodo
 
 /*
  // Override to support conditional editing of the table view.

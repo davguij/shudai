@@ -20,6 +20,7 @@
 - (IBAction)btnBuscar:(id)sender;
 - (IBAction)cerrarTeclado:(id)sender;
 
+- (void)llamadaTwitter:(NSString *)busqueda;
 
 
 @end
