@@ -8,6 +8,8 @@
 
 #import "SHViewController.h"
 #import "Sugerencia.h"
+#import "SH2ViewController.h"
+
 
 @interface SHViewController ()
 
@@ -41,9 +43,12 @@
 
 - (IBAction)btnBuscar:(id)sender {
     
-    NSString *campoTexto = [txtBuscar text];
+    //NSString *campoTexto = [txtBuscar text];
+    //NSLog(@"%@", campoTexto);
     
-    NSLog(@"%@", campoTexto);
+    //[self performSegueWithIdentifier:@"segundaVista" sender:campoTexto];
+    
+    
     
     
 }
@@ -135,17 +140,27 @@
  }
  */
 
-/*
- #pragma mark - Navigation
+
+
+
+
+
+
+
+
+#pragma mark - Navigation
  
- // In a story board-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"segundaVista"])
+    {
+        NSString *texto = txtBuscar.text;
+        SH2ViewController *viewController = segue.destinationViewController;
+        viewController.campo2Texto = texto;
+    }
+}
  
- */
+
 
 
 @end

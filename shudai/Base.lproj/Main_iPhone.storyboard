@@ -37,9 +37,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="247" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="iwL-jx-Ojn" kind="push" id="FCp-oz-8P0"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -55,7 +52,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnBuscar:" destination="T2R-4A-D6K" eventType="touchUpInside" id="zlE-d1-Yp4"/>
-                                    <segue destination="iwL-jx-Ojn" kind="push" id="hhN-MT-uFH"/>
+                                    <segue destination="iwL-jx-Ojn" kind="push" identifier="segundaVista" id="45w-jS-gt0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sugerencias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avi-im-NN5">
@@ -81,7 +78,7 @@
         <!--View Controller - Shudai-->
         <scene sceneID="r1o-kW-Q3T">
             <objects>
-                <viewController id="iwL-jx-Ojn" sceneMemberID="viewController">
+                <viewController id="iwL-jx-Ojn" customClass="SH2ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="avA-OG-c6L"/>
                         <viewControllerLayoutGuide type="bottom" id="XnP-cY-qA9"/>
@@ -108,7 +105,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LRd-P6-qmQ" kind="push" id="Zw7-MD-D34"/>
+                                    <segue destination="4di-K5-qIu" kind="push" identifier="terceraVista" id="SMG-eH-EPo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,54 +119,34 @@
             </objects>
             <point key="canvasLocation" x="1245" y="99"/>
         </scene>
-        <!--Table View Controller - Shudai-->
-        <scene sceneID="YuB-ad-quu">
+        <!--Table View Controller-->
+        <scene sceneID="Q0M-vO-uDx">
             <objects>
-                <tableViewController id="LRd-P6-qmQ" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="B2N-Vc-JTw">
+                <tableViewController id="4di-K5-qIu" customClass="SHTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xr6-4u-rob">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="86" id="hxe-9A-SLc">
-                                <rect key="frame" x="0.0" y="86" width="320" height="86"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellID" rowHeight="93" id="PXm-Hc-hgD">
+                                <rect key="frame" x="0.0" y="86" width="320" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hxe-9A-SLc" id="kar-nc-d1Z">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PXm-Hc-hgD" id="DNQ-Sw-9VE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-RQ-abB">
-                                            <rect key="frame" x="0.0" y="0.0" width="82" height="85"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="201" translatesAutoresizingMaskIntoConstraints="NO" id="g4j-uV-NPH">
-                                            <rect key="frame" x="99" y="31" width="201" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Tweet">
-                                                    <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="LRd-P6-qmQ" id="jWL-ab-Zh3"/>
-                            <outlet property="delegate" destination="LRd-P6-qmQ" id="U7G-K6-0KH"/>
+                            <outlet property="dataSource" destination="4di-K5-qIu" id="TGf-Lo-DIQ"/>
+                            <outlet property="delegate" destination="4di-K5-qIu" id="yBL-2n-8u9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Shudai" id="znb-hu-k69"/>
+                    <navigationItem key="navigationItem" id="LqN-vP-5BC"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o1n-zX-TVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oQ-ip-YdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="99"/>
+            <point key="canvasLocation" x="1682" y="99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1zi-me-f0k">
@@ -195,7 +172,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="hhN-MT-uFH"/>
-    </inferredMetricsTieBreakers>
 </document>
