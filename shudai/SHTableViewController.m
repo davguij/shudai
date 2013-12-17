@@ -38,7 +38,7 @@
     
     self.title = self.busqueda;
     
-    NSLog(@"%@", listaTweets);
+    //NSLog(@"%@", listaTweets);
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +79,7 @@
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
     
     NSString *user = [userDict valueForKey:@"screen_name"];
-    //NSString *name = [userDict valueForKey:@"name"];
+    
     
     celda.idTweet.text = user;
     celda.imgTweet.image = [UIImage imageWithData:imageData];

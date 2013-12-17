@@ -172,11 +172,9 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     self.buffer = nil;
     
     
-    //NSLog(@"%@", self.results);
+    NSMutableArray *txtTweet = [self.results valueForKey:@"text"];
     
-    
-    
-    
+    NSLog(@"%@", txtTweet);
     
     //    [self.tableView reloadData];
     //    [self.tableView flashScrollIndicators];
