@@ -34,6 +34,7 @@
 		BC72722A1845334500BF08DC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7272201845334500BF08DC /* SBJsonParser.m */; };
 		BC72722B1845334500BF08DC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7272221845334500BF08DC /* SBJsonWriter.m */; };
 		BC72722C1845334500BF08DC /* myJson.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7272251845334500BF08DC /* myJson.m */; };
+		BCC1DEAA185FA0890029E032 /* SHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC1DEA9185FA0890029E032 /* SHCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		BC7272221845334500BF08DC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		BC7272241845334500BF08DC /* myJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myJson.h; sourceTree = "<group>"; };
 		BC7272251845334500BF08DC /* myJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myJson.m; sourceTree = "<group>"; };
+		BCC1DEA8185FA0890029E032 /* SHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHCell.h; sourceTree = "<group>"; };
+		BCC1DEA9185FA0890029E032 /* SHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 		0FDE59371844B11E0036376D /* shudai */ = {
 			isa = PBXGroup;
 			children = (
+				BCC1DEA8185FA0890029E032 /* SHCell.h */,
+				BCC1DEA9185FA0890029E032 /* SHCell.m */,
 				BC3461B7185A4009003AE43F /* SH2ViewController.h */,
 				BC3461B8185A4009003AE43F /* SH2ViewController.m */,
 				BC2230D21857BA5600123584 /* SHTableViewController.h */,
@@ -356,6 +361,7 @@
 				BC7272291845334500BF08DC /* SBJsonBase.m in Sources */,
 				BC1EDA8C184B7BBE004F5978 /* SHViewController.m in Sources */,
 				BC72722B1845334500BF08DC /* SBJsonWriter.m in Sources */,
+				BCC1DEAA185FA0890029E032 /* SHCell.m in Sources */,
 				BC72722A1845334500BF08DC /* SBJsonParser.m in Sources */,
 				BC7272261845334500BF08DC /* NSObject+SBJSON.m in Sources */,
 				0FDE59421844B11E0036376D /* SHAppDelegate.m in Sources */,

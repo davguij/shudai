@@ -7,6 +7,7 @@
 //
 
 #import "SHTableViewController.h"
+#import "SHCell.h"
 
 
 @interface SHTableViewController ()
@@ -37,7 +38,7 @@
     
     self.title = self.busqueda;
     
-    
+    NSLog(@"%@", listaTweets);
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,14 +65,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"CellID";
+    SHCell *celda = (SHCell *) [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Configure the cell...
     NSDictionary *tweet = listaTweets[indexPath.row];
-    cell.textLabel.text = tweet[@"text"];
+    celda.textTweet.text = tweet[@"text"];
     
-    return cell;
+    
+    NSDictionary * userDict = [tweet valueForKey:@"user"];
+    NSString *imageLoc = [userDict valueForKey:@"profile_image_url"];
+    NSURL *url = [NSURL URLWithString:imageLoc];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:url];
+    
+    NSString *user = [userDict valueForKey:@"screen_name"];
+    //NSString *name = [userDict valueForKey:@"name"];
+    
+    celda.idTweet.text = user;
+    celda.imgTweet.image = [UIImage imageWithData:imageData];
+    
+    return celda;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
