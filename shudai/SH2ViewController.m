@@ -10,6 +10,9 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "SHTableViewController.h"
+#import "JSON.h"
+#import "UNIRest.h"
+
 
 typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
 {
@@ -94,7 +97,7 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
 #pragma mark === Private methods ===
 #pragma mark -
 
-#define RESULTS_PERPAGE @"100"
+#define RESULTS_PERPAGE @"10"
 
 - (void)loadQuery
 {
@@ -174,10 +177,13 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     
     NSMutableArray *txtTweet = [self.results valueForKey:@"text"];
     
-    NSLog(@"%@", txtTweet);
+    //NSLog(@"%@", txtTweet);
     
     //    [self.tableView reloadData];
     //    [self.tableView flashScrollIndicators];
+    
+    //LLamar a la API de sentimientos
+    [self llamadaApiSentimientos: (NSMutableArray *) txtTweet];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -212,6 +218,41 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
         self.buffer = nil;
     }
 }
+
+
+
+#pragma mark - API Sentimientos
+
+-(void) llamadaApiSentimientos: (NSMutableArray *) resultados
+{
+
+
+    NSString *twitter = [NSString stringWithFormat:@"http://store.apicultur.com/api/stmtlk/1.0.0/valoracion/tweet/10/mierda"];
+    
+    //LLamada a la API
+    NSURL *baseURL = [NSURL URLWithString:twitter];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:baseURL];
+    
+    [request setHTTPMethod:@"GET"];
+   
+    [request setValue:@"Bearer 42pHgkV7S7UgI_mgcn3LbeDBi6ca" forHTTPHeaderField:@"Authorization:"];
+    
+    
+   NSURLResponse *response;
+   NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+   NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSUTF8StringEncoding];
+    
+
+    
+   NSLog(@"Reply: %@", theReply);
+    
+}
+
+
+
+
+
+
 
 
 
