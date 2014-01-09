@@ -11,7 +11,6 @@
 #import <Social/Social.h>
 #import "SHTableViewController.h"
 #import "JSON.h"
-#import "UNIRest.h"
 
 
 typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
