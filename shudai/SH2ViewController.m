@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
 
 @implementation SH2ViewController
 
-@synthesize campo2Texto;
+@synthesize campo2Texto, imgOpinion, txtOpinion;
 
 
 - (ACAccountStore *)accountStore
@@ -224,13 +224,22 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
 
 -(void) llamadaApiSentimientos: (NSMutableArray *) resultados
 {
+    int valor= 0;
+    
+    for (NSString *tweet in resultados) {
+        NSString *tweetSemiCodificado = [tweet stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSMutableString *tweetCodificado = [NSMutableString stringWithString:tweetSemiCodificado];
+        [tweetCodificado replaceOccurrencesOfString:@":" withString:@"%3A" options:NSLiteralSearch range:NSMakeRange(0, [tweetCodificado length])];
+        [tweetCodificado replaceOccurrencesOfString:@"/" withString:@"%2F" options:NSLiteralSearch range:NSMakeRange(0, [tweetCodificado length])];
+       // NSLog(@"%@", tweetCodificado);
 
-
-    NSString *twitter = [NSString stringWithFormat:@"http://store.apicultur.com/api/stmtlk/1.0.0/valoracion/tweet/10/mierda"];
+    NSString *baseUrl = [NSString stringWithFormat:@"http://store.apicultur.com/api/stmtlk/1.0.0/valoracion/tweet/10"];
+        
+        NSString *urlCompleta = [NSString stringWithFormat:@"%@/%@", baseUrl, tweetCodificado];
     
     //LLamada a la API
-    NSURL *baseURL = [NSURL URLWithString:twitter];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:baseURL];
+    NSURL *url = [NSURL URLWithString:urlCompleta];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     
     [request setHTTPMethod:@"GET"];
    
@@ -239,15 +248,60 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     
    NSURLResponse *response;
    NSData *POSTReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-   NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSUTF8StringEncoding];
+   //NSString *theReply = [[NSString alloc] initWithBytes:[POSTReply bytes] length:[POSTReply length] encoding: NSUTF8StringEncoding];
     
-
+        NSDictionary *jsonTheReply = [NSJSONSerialization JSONObjectWithData:POSTReply options:0 error:nil];
+        
+        //NSMutableArray *ponderacion= jsonTheReply[@"ponderacion"];
+        
+        //NSLog(@"%@", jsonTheReply);
+  
+        if ([jsonTheReply[@"ponderacion"] isEqualToString:@"NEGATIVA"]) {
+            
+            NSLog(@"Funciona NEGATIVA");
+            //int intensidad = jsonTheReply;
+            //jsonTheReply[@"intensidad"];
+            valor = valor - 1;
+            
+        } else {
+            
+            NSLog(@"Funciona POSITIVA");
+            valor = valor + 1;
+        }
+        
+        
+        
+   }
     
-   NSLog(@"Reply: %@", theReply);
+    NSLog(@"%d", valor);
     
+    if (valor < 0) {
+        NSString *negativo = [[NSBundle mainBundle] pathForResource:@"twitter_square_angry_256x256" ofType:@"png"];
+        UIImage *imgNegativa = [[UIImage alloc] initWithContentsOfFile:negativo];
+        
+        imgOpinion.image= imgNegativa;
+        
+        txtOpinion.text = @"NEGATIVA";
+        
+    } else if (valor > 0){
+        
+        NSString *positivo = [[NSBundle mainBundle] pathForResource:@"twitter_square_happy_256x256" ofType:@"png"];
+        UIImage *imgPositiva = [[UIImage alloc] initWithContentsOfFile:positivo];
+        
+        imgOpinion.image= imgPositiva;
+        
+        txtOpinion.text = @"POSITIVA";
+        
+    } else {
+        
+        NSString *neutro = [[NSBundle mainBundle] pathForResource:@"twitter_square_256x256" ofType:@"png"];
+        UIImage *imgNeutra = [[UIImage alloc] initWithContentsOfFile:neutro];
+        
+        imgOpinion.image= imgNeutra;
+        
+        txtOpinion.text = @"NEUTRA";
+    }
 }
-
-
 
 
 

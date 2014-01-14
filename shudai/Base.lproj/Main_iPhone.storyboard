@@ -93,8 +93,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78H-l3-uyu">
-                                <rect key="frame" x="20" y="117" width="280" height="343"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_square_sleeping_256x256.png" translatesAutoresizingMaskIntoConstraints="NO" id="78H-l3-uyu">
+                                <rect key="frame" x="32" y="137" width="256" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN6-Fg-R1t">
@@ -108,12 +108,31 @@
                                     <segue destination="4di-K5-qIu" kind="push" identifier="terceraVista" id="SMG-eH-EPo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZf-Fi-ojs">
+                                <rect key="frame" x="32" y="415" width="256" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Estoy buscando...">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="23" name="HelveticaNeue-Bold"/>
+                                            <font key="NSOriginalFont" size="23" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shudai" id="cVn-8u-MIW">
                         <barButtonItem key="backBarButtonItem" title="Volver" id="RSh-cP-ZZW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imgOpinion" destination="78H-l3-uyu" id="DwS-US-dbu"/>
+                        <outlet property="txtOpinion" destination="XZf-Fi-ojs" id="ULb-Qn-53Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JkS-za-PYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,6 +218,9 @@
             <point key="canvasLocation" x="360" y="99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="twitter_square_sleeping_256x256.png" width="256" height="256"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

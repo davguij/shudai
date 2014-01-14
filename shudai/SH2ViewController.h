@@ -12,4 +12,8 @@
 
 @property (nonatomic, copy) NSString *campo2Texto;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imgOpinion;
+
+@property (strong, nonatomic) IBOutlet UILabel *txtOpinion;
+
 @end

@@ -25,6 +25,10 @@
 		BC1B4F531858EB7A008B34C6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1B4F521858EB7A008B34C6 /* Social.framework */; };
 		BC1EDA8C184B7BBE004F5978 /* SHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1EDA8B184B7BBE004F5978 /* SHViewController.m */; };
 		BC2230D41857BA5600123584 /* SHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2230D31857BA5600123584 /* SHTableViewController.m */; };
+		BC2933D21885C8C300319205 /* twitter_square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2933CE1885C8C300319205 /* twitter_square_256x256.png */; };
+		BC2933D31885C8C300319205 /* twitter_square_angry_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2933CF1885C8C300319205 /* twitter_square_angry_256x256.png */; };
+		BC2933D41885C8C300319205 /* twitter_square_happy_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2933D01885C8C300319205 /* twitter_square_happy_256x256.png */; };
+		BC2933D51885C8C300319205 /* twitter_square_sleeping_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = BC2933D11885C8C300319205 /* twitter_square_sleeping_256x256.png */; };
 		BC3461B9185A4009003AE43F /* SH2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC3461B8185A4009003AE43F /* SH2ViewController.m */; };
 		BC40CC7E184A68B60072EB91 /* Sugerencia.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40CC7D184A68B60072EB91 /* Sugerencia.m */; };
 		BC7272261845334500BF08DC /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7272181845334500BF08DC /* NSObject+SBJSON.m */; };
@@ -72,6 +76,10 @@
 		BC1EDA8B184B7BBE004F5978 /* SHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHViewController.m; sourceTree = "<group>"; };
 		BC2230D21857BA5600123584 /* SHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTableViewController.h; sourceTree = "<group>"; };
 		BC2230D31857BA5600123584 /* SHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTableViewController.m; sourceTree = "<group>"; };
+		BC2933CE1885C8C300319205 /* twitter_square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_square_256x256.png; sourceTree = "<group>"; };
+		BC2933CF1885C8C300319205 /* twitter_square_angry_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_square_angry_256x256.png; sourceTree = "<group>"; };
+		BC2933D01885C8C300319205 /* twitter_square_happy_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_square_happy_256x256.png; sourceTree = "<group>"; };
+		BC2933D11885C8C300319205 /* twitter_square_sleeping_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_square_sleeping_256x256.png; sourceTree = "<group>"; };
 		BC3461B7185A4009003AE43F /* SH2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SH2ViewController.h; sourceTree = "<group>"; };
 		BC3461B8185A4009003AE43F /* SH2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SH2ViewController.m; sourceTree = "<group>"; };
 		BC40CC7C184A68B60072EB91 /* Sugerencia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sugerencia.h; path = shudai/Sugerencia.h; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 		0FDE59251844B11E0036376D = {
 			isa = PBXGroup;
 			children = (
+				BC2933D61885C8CB00319205 /* IMG */,
 				BC40CC7B184A68590072EB91 /* Modelo */,
 				BC7272141845334500BF08DC /* JSON */,
 				0FDE59371844B11E0036376D /* shudai */,
@@ -203,6 +212,17 @@
 				0FDE595C1844B11E0036376D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC2933D61885C8CB00319205 /* IMG */ = {
+			isa = PBXGroup;
+			children = (
+				BC2933CE1885C8C300319205 /* twitter_square_256x256.png */,
+				BC2933CF1885C8C300319205 /* twitter_square_angry_256x256.png */,
+				BC2933D01885C8C300319205 /* twitter_square_happy_256x256.png */,
+				BC2933D11885C8C300319205 /* twitter_square_sleeping_256x256.png */,
+			);
+			name = IMG;
 			sourceTree = "<group>";
 		};
 		BC40CC7B184A68590072EB91 /* Modelo */ = {
@@ -329,10 +349,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2933D51885C8C300319205 /* twitter_square_sleeping_256x256.png in Resources */,
+				BC2933D31885C8C300319205 /* twitter_square_angry_256x256.png in Resources */,
 				0FDE59481844B11E0036376D /* Main_iPad.storyboard in Resources */,
 				0FDE594D1844B11E0036376D /* Images.xcassets in Resources */,
 				0FDE59451844B11E0036376D /* Main_iPhone.storyboard in Resources */,
 				0FDE593C1844B11E0036376D /* InfoPlist.strings in Resources */,
+				BC2933D21885C8C300319205 /* twitter_square_256x256.png in Resources */,
+				BC2933D41885C8C300319205 /* twitter_square_happy_256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
