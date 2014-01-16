@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
 
 @implementation SH2ViewController
 
-@synthesize campo2Texto, imgOpinion, txtOpinion;
+@synthesize campo2Texto, imgOpinion, txtOpinion, indicator;
 
 
 - (ACAccountStore *)accountStore
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     switch (state)
     {
         case UYLTwitterSearchStateLoading:
-            return @"Loading...";
+            return @"Estoy buscando...";
             break;
         case UYLTwitterSearchStateNotFound:
             return @"No results found";
@@ -85,10 +85,14 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     
     self.title = self.campo2Texto;
     
+    txtOpinion.text = [self searchMessageForState:self.searchState];
+    
     [self loadQuery];
     
     
 }
+
+
 
 
 
@@ -127,6 +131,7 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
              dispatch_async(dispatch_get_main_queue(), ^{
                  self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
                  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                 [indicator startAnimating];
              });
          }
          else
@@ -252,15 +257,11 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
     
         NSDictionary *jsonTheReply = [NSJSONSerialization JSONObjectWithData:POSTReply options:0 error:nil];
         
-        //NSMutableArray *ponderacion= jsonTheReply[@"ponderacion"];
         
-        //NSLog(@"%@", jsonTheReply);
   
         if ([jsonTheReply[@"ponderacion"] isEqualToString:@"NEGATIVA"]) {
             
             NSLog(@"Funciona NEGATIVA");
-            //int intensidad = jsonTheReply;
-            //jsonTheReply[@"intensidad"];
             valor = valor - 1;
             
         } else {
@@ -274,6 +275,9 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
    }
     
     NSLog(@"%d", valor);
+    [indicator stopAnimating];
+
+    
     
     if (valor < 0) {
         NSString *negativo = [[NSBundle mainBundle] pathForResource:@"twitter_square_angry_256x256" ofType:@"png"];
@@ -323,7 +327,6 @@ typedef NS_ENUM(NSUInteger, UYLTwitterSearchState)
         viewController.busqueda = bsc;
     }
 }
-
 
 
 

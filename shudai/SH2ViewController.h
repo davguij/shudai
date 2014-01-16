@@ -16,4 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *txtOpinion;
 
+
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+
 @end

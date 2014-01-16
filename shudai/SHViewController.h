@@ -12,11 +12,13 @@
 {
     //Variables
     IBOutlet UITableView *tablaSugerencias;
+    //NSString * txtClicado;
 }
 
 @property (readonly,nonatomic) NSMutableArray *listaSugerencias;
 @property (nonatomic, retain) UITableView *tablaSugerencias;
 @property (strong, nonatomic) IBOutlet UITextField *txtBuscar;
+@property (strong,nonatomic) NSString *txtClicado;
 - (IBAction)btnBuscar:(id)sender;
 - (IBAction)cerrarTeclado:(id)sender;
 
