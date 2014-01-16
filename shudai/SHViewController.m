@@ -138,9 +138,17 @@
     if ([segue.identifier isEqualToString:@"segundaVista"])
     {
         NSString *texto = txtBuscar.text;
-        SH2ViewController *viewController = segue.destinationViewController;
-        viewController.campo2Texto = texto;
-        viewController.campo2Texto = self.txtClicado;
+        
+        
+        if ([texto isEqualToString:@""]) {
+            SH2ViewController *viewController = segue.destinationViewController;
+            viewController.campo2Texto = self.txtClicado;
+            NSLog(@"%@", self.txtClicado);
+            
+        }else{
+            SH2ViewController *viewController = segue.destinationViewController;
+            viewController.campo2Texto = texto;
+        }
 //        NSLog(@"Funciona!");
 //        NSLog(@"%@", self.txtClicado);
         
