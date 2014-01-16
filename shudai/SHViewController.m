@@ -17,7 +17,7 @@
 
 @implementation SHViewController
 
-@synthesize listaSugerencias, tablaSugerencias, txtBuscar;
+@synthesize listaSugerencias, tablaSugerencias, txtBuscar, txtClicado;
 
 
 - (void)viewDidLoad
@@ -28,16 +28,35 @@
     
     listaSugerencias = [[NSMutableArray alloc] init];
     
-    for (int i=0; i < 5; i++) {
+    //for (int i=0; i < 5; i++) {
         
-        NSString *sugTemporal = [[NSString alloc]initWithFormat:@"Sugerencia %d", i ];
+       // NSString *sugTemporal = [[NSString alloc]initWithFormat:@"Sugerencia %d", i ];
         
-        Sugerencia *miSugerencia = [[Sugerencia alloc] initWithNombre:sugTemporal
+        Sugerencia *miSugerencia = [[Sugerencia alloc] initWithNombre:@"Rajoy"
                                                     stringComentarios:NULL];
-        
+        Sugerencia *sugerenciaDOS =[[Sugerencia alloc] initWithNombre:@"Madrid"
+                                                    stringComentarios:NULL];
+        Sugerencia *sugerenciaTres = [[Sugerencia alloc] initWithNombre:@"Agosto"
+                                                      stringComentarios:NULL];
+        Sugerencia *sugerenciaCuatro = [[Sugerencia alloc] initWithNombre:@"Depeche_Mode"
+                                                    stringComentarios:NULL];
+        Sugerencia *sugerenciaCinco = [[Sugerencia alloc] initWithNombre:@"Rolling_Stones"
+                                                    stringComentarios:NULL];
+        Sugerencia *sugerenciaSeis = [[Sugerencia alloc] initWithNombre:@"LG"
+                                                    stringComentarios:NULL];
+        Sugerencia *sugerenciaSiete = [[Sugerencia alloc] initWithNombre:@"Tomates"
+                                                    stringComentarios:NULL];
+    
         [listaSugerencias addObject:miSugerencia];
+        [listaSugerencias addObject:sugerenciaDOS];
+        [listaSugerencias addObject:sugerenciaTres];
+        [listaSugerencias addObject:sugerenciaCuatro];
+        [listaSugerencias addObject:sugerenciaCinco];
+        [listaSugerencias addObject:sugerenciaSeis];
+        [listaSugerencias addObject:sugerenciaSiete];
+    
         
-    }
+    //}
 }
 
 
@@ -98,51 +117,15 @@
     
     //txtBuscar.text = [sugerenciaClicada nombreSugerencia];
     
-    NSLog(@"%@", [sugerenciaClicada nombreSugerencia]);
+    
+    txtClicado = [sugerenciaClicada nombreSugerencia];
+    
+   
+    
+    [self performSegueWithIdentifier:@"segundaVista" sender:self.txtClicado];
+    
+
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-
-
-
 
 
 
@@ -157,7 +140,13 @@
         NSString *texto = txtBuscar.text;
         SH2ViewController *viewController = segue.destinationViewController;
         viewController.campo2Texto = texto;
+        viewController.campo2Texto = self.txtClicado;
+//        NSLog(@"Funciona!");
+//        NSLog(@"%@", self.txtClicado);
+        
     }
+ 
+ 
 }
  
 
