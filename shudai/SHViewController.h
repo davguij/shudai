@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface SHViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     //Variables
     IBOutlet UITableView *tablaSugerencias;
@@ -19,7 +19,6 @@
 @property (nonatomic, retain) UITableView *tablaSugerencias;
 @property (strong, nonatomic) IBOutlet UITextField *txtBuscar;
 @property (strong,nonatomic) NSString *txtClicado;
-@property (strong,nonatomic) NSString *campoTxt;
 - (IBAction)btnBuscar:(id)sender;
 - (IBAction)cerrarTeclado:(id)sender;
 
