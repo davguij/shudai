@@ -26,6 +26,9 @@
 	// Do any additional setup after loading the view.
     
     
+    
+    
+    
     listaSugerencias = [[NSMutableArray alloc] init];
     
     //for (int i=0; i < 5; i++) {
@@ -60,12 +63,15 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    txtBuscar.text = @"";
+    
+}
+
+
 - (IBAction)btnBuscar:(id)sender {
     
-    //NSString *campoTexto = [txtBuscar text];
-    //NSLog(@"%@", campoTexto);
-    
-    //[self performSegueWithIdentifier:@"segundaVista" sender:campoTexto];
     
     
     
@@ -131,7 +137,26 @@
 
 
 
+
 #pragma mark - Navigation
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    if ([identifier isEqualToString:@"segundaVista"]){
+        
+        if ([txtBuscar.text isEqualToString:@""]) {
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Güarning" message:@"Tienes que escribir algo, melón!" delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+            
+            [alerta show];
+            
+            return NO;
+        }
+        
+    }
+    
+    return YES;
+}
+
  
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -140,7 +165,14 @@
         NSString *texto = txtBuscar.text;
         
         
-        if ([texto isEqualToString:@""]) {
+        if ([texto isEqualToString:@""] && [self.txtClicado isEqualToString:@""]) {
+            
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Güarning" message:@"Busca algo, melón!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            
+            [alerta show];
+            
+        }else if ([texto isEqualToString:@""]) {
+            
             SH2ViewController *viewController = segue.destinationViewController;
             viewController.campo2Texto = self.txtClicado;
             NSLog(@"%@", self.txtClicado);
